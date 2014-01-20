@@ -21,13 +21,21 @@ Put::~Put() {
 }
 
 double Put::calculateBuy() {
-	double earnings;
-	earnings = shares * (strikePrice - endPrice) - premium;
-	return earnings;
+	double profit;
+	if (endPrice > strikePrice) {
+		profit = -premium;
+	} else {
+		profit = shares * (strikePrice - endPrice) - premium;
+	}
+	return profit;
 }
 
 double Put::calculateSell() {
-	double earnings;
-	earnings = shares * (endPrice - strikePrice) + premium;
-	return earnings;
+	double profit;
+	if (endPrice > strikePrice) {
+		profit = premium;
+	} else {
+		profit = shares * (endPrice - strikePrice) + premium;
+	}
+	return profit;
 }

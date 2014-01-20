@@ -16,6 +16,10 @@ public:
 	double calculateBuy();
 	double calculateSell();
 
+	void setEndPrice(double endPrice) {
+		this->endPrice = endPrice;
+	}
+
 private:
 	double initialPrice;
 	double strikePrice;
